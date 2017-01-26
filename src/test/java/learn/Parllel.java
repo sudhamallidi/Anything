@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.AssertJUnit;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -18,7 +19,8 @@ public class Parllel {
 	
 	@BeforeMethod
 	public void setUp(){
-		driver = new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\sathi\\Downloads\\qawork\\chromedriver_win32\\chromedriver.exe");	
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 	}
 	
