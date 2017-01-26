@@ -1,25 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="1" failed="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="5883" started-at="2017-01-26T02:34:20Z" finished-at="2017-01-26T02:34:26Z">
+  <suite name="Default suite" duration-ms="20" started-at="2017-01-26T12:07:01Z" finished-at="2017-01-26T12:07:01Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="5883" started-at="2017-01-26T02:34:20Z" finished-at="2017-01-26T02:34:26Z">
-      <class name="learn.Sequence">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:learn.Sequence@6e3c1e69]" name="setUp" is-config="true" duration-ms="2466" started-at="2017-01-26T08:04:20Z" finished-at="2017-01-26T08:04:22Z">
+    <test name="Default test" duration-ms="20" started-at="2017-01-26T12:07:01Z" finished-at="2017-01-26T12:07:01Z">
+      <class name="com.sudha.learn.testSignIn">
+        <test-method status="FAIL" signature="setUp(java.lang.String)[pri:0, instance:com.sudha.learn.testSignIn@35851384]" name="setUp" is-config="true" duration-ms="0" started-at="2017-01-26T17:37:01Z" finished-at="2017-01-26T17:37:01Z">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'browser' is required by @Configuration on method setUp but has not been marked @Optional or defined
+in /private/var/folders/g2/d8l30t9x08sdrh5rb_78hkwc0000gp/T/testng-eclipse-1852477976/testng-customsuite.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'browser' is required by @Configuration on method setUp but has not been marked @Optional or defined
+in /private/var/folders/g2/d8l30t9x08sdrh5rb_78hkwc0000gp/T/testng-eclipse-1852477976/testng-customsuite.xml
+	at org.testng.internal.Parameters.createParameters(Parameters.java:154)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:361)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:84)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:201)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:178)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="sequnceOne()[pri:0, instance:learn.Sequence@6e3c1e69]" name="sequnceOne" duration-ms="3331" started-at="2017-01-26T08:04:22Z" finished-at="2017-01-26T08:04:26Z">
+        <test-method status="SKIP" signature="dosignup()[pri:0, instance:com.sudha.learn.testSignIn@35851384]" name="dosignup" duration-ms="5" started-at="2017-01-26T17:37:01Z" finished-at="2017-01-26T17:37:01Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sequnceOne -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:learn.Sequence@6e3c1e69]" name="tearDown" is-config="true" duration-ms="76" started-at="2017-01-26T08:04:26Z" finished-at="2017-01-26T08:04:26Z">
+        </test-method> <!-- dosignup -->
+        <test-method status="SKIP" signature="tearDown()[pri:0, instance:com.sudha.learn.testSignIn@35851384]" name="tearDown" is-config="true" duration-ms="0" started-at="2017-01-26T17:37:01Z" finished-at="2017-01-26T17:37:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- learn.Sequence -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+      </class> <!-- com.sudha.learn.testSignIn -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
