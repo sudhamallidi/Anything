@@ -16,10 +16,10 @@ WebDriver driver;
 	@BeforeClass
 	public void setUp(String browser){
 		if(browser.equalsIgnoreCase("firefox"))
-		//	System.setProperty("webdriver.chrome.driver", "C:\\Users\\sathi\\Downloads\\qawork\\chromedriver_win32\\chromedriver.exe");	
 			driver = new FirefoxDriver();
 		else if (browser.equalsIgnoreCase("chrome"))
 		// chrome driver path
+//			System.setProperty("webdriver.chrome.driver", "C:\\Users\\sathi\\Downloads\\qawork\\chromedriver_win32\\chromedriver.exe");
 			driver = new ChromeDriver();
 	 else {
             throw new IllegalArgumentException("Invalid browser value!!");
