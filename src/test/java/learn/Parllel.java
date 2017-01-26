@@ -22,7 +22,13 @@ public class Parllel {
 		driver.manage().window().maximize();
 	}
 	
-	@Test
+	@Test(groups= "InProgress")
+	public void stillInProgress(){
+		
+		
+	}
+	
+	@Test(groups= "Completed")
 	public void testOne(){
 		
 		driver.get("https://amazon.in");

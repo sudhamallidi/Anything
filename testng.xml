@@ -2,14 +2,20 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="false">
   <test name="Test">
+   <groups>
+    <run>
+      <exclude name="inProgress"/>
+      <include name="Complete"/>
+    </run>
+  </groups>
+  
     <classes>
       <class name="learn.Sequence">
-      <methods>
-        <exclude name="sequnceTwo" />
-      </methods>
+     <methods>
+      <exclude name="sequnceTwo" />
+     </methods> 
       </class>
-     <!--  <class name="learn.Parllel"/> -->
-      
+      <class name="learn.Parllel"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
