@@ -33,7 +33,7 @@ WebDriver driver;
 	}
 	
 
-	@Test
+	//@Test
 	public void dosignup()
 	{
 WelcomePage page = new WelcomePage(driver);
@@ -56,6 +56,14 @@ try {
 	// TODO Auto-generated catch block
 	e.printStackTrace();
 }
+	}
+	
+	
+	@Test
+	public void gettingName(){
+		
+		WelcomePage page = new WelcomePage(driver);
+		page.getAllProductNames();
 	}
 	
 
