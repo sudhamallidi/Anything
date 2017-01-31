@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class RegistrationPage {
+	
 	WebDriver driver ;
 	public RegistrationPage(WebDriver driver)
 		{
