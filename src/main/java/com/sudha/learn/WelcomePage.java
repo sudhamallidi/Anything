@@ -32,20 +32,23 @@ WebDriver driver ;
 	@FindBy(id="homefeatured")
 	private WebElement pageLoadConfirmed;
 	
-	@FindBy(id = "dumyID")
-	private WebElement addToCartButton ;
+	@FindBy(xpath = "//ul[@id='homefeatured']/li[1]//div[@class='right-block']//a[@title='Add to cart']")
+	private WebElement addToCartButton1 ;
 	
 	//commenting larger xpath
 //	@FindBy(xpath = "//div[@class='tab-content']/ul[@id='homefeatured']/li[1]/div/div[2]/h5/a")
 //	private WebElement productName1 ;
 	
-	@FindBy(xpath = "//ul[@id='blockbestsellers']/li[1]//div[@class='right-block']//a[@class='product-name']")
+	@FindBy(xpath = "//ul[@id='homefeatured']/li[1]/div")
+	private WebElement productContainer1 ;
+	
+	@FindBy(xpath = "//ul[@id='homefeatured']/li[1]//div[@class='right-block']//a[@class='product-name']")
 	private WebElement productName1 ;
 	
-	@FindBy(xpath = "//ul[@id='blockbestsellers']/li[2]//div[@class='right-block']//a[@class='product-name']")
+	@FindBy(xpath = "//ul[@id='homefeatured']/li[2]//div[@class='right-block']//a[@class='product-name']")
 	private WebElement productName2 ;
 	
-	@FindBy(xpath = "//ul[@id='blockbestsellers']/li[3]//div[@class='right-block']//a[@class='product-name']")
+	@FindBy(xpath = "//ul[@id='homefeatured']/li[3]//div[@class='right-block']//a[@class='product-name']")
 	private WebElement productName3 ;
 	
 	
@@ -61,10 +64,7 @@ WebDriver driver ;
 	//go back in DOM, parent, sibling ..  PREDICATES
 	@FindBy(xpath= "//ul[@id='blockbestsellers']/li//div[@class='right-block']//span[contains(text(),'16.51')]/parent::div/preceding-sibling::h5/a")
 	private WebElement productNameFromPrice ;
-	
-	
-	
-	
+
 	public WelcomePage getAllProductNames(){
 
 		for (WebElement prodName : productNames) 
@@ -83,25 +83,26 @@ WebDriver driver ;
 		//return new WelcomePage(driver);
 	}
 	
-	public void waitUntilPageLoads(){
-		WebDriverWait wait = new WebDriverWait(driver, 5);
+	public WelcomePage waitUntilPageLoads(){
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOf(pageLoadConfirmed));
+		return this ;
 	}
 	
 	public void waitUntilElementLoads(WebElement element){
 		
-		WebDriverWait wait = new WebDriverWait(driver, 5);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOf(element));
 		
 	}
 
 	
-	public void addToCart(){
-		
+	public AddToCartPopUp addToCart(){
 		Actions action = new Actions(driver);
-	//	action.moveToElement(wesfsd).build.perform ;
-		waitUntilElementLoads(addToCartButton);
-		addToCartButton.click();
+		action.moveToElement(productContainer1).build().perform(); 
+		waitUntilElementLoads(productName1);
+		addToCartButton1.click();
+		return new AddToCartPopUp(driver);
 	}
 	
 	public void searchSel() {
@@ -119,6 +120,11 @@ WebDriver driver ;
 		}
 		
 		return new AuthenticationPage(driver);
+	}
+	
+	
+	public String getMeta(){
+		return productName1.getText() ;
 	}
 	
 	

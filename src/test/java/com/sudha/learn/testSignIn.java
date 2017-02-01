@@ -3,6 +3,7 @@ package com.sudha.learn;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -59,14 +60,22 @@ try {
 	}
 	
 	
-	@Test
+	//@Test
 	public void gettingName(){
 		
 		WelcomePage page = new WelcomePage(driver);
 		page.getAllProductNames();
 	}
 	
-
+	@Test
+	public void assertMeta(){
+		WelcomePage page = new WelcomePage(driver);
+	AddToCartPopUp addCart = page.waitUntilPageLoads().addToCart().waitUntilPageLoads();
+		Assert.assertEquals(page.getMeta(), addCart.getItemName());
+	}
+	
+	
+	
 	
 	@AfterClass
 	public void tearDown(){

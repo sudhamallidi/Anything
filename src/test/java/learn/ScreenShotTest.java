@@ -26,6 +26,14 @@ public class ScreenShotTest {
 		driver = new ChromeDriver();
 	}
 	
+	
+	// Parallel runs are not thread safe ...
+	// in order to make the threads not interfere with each other , we use ThreadLocal<driver> thread safe ... confiugurations using listeners 
+//	Tommorow :
+//		moving screeshot to listener .. May be inheritance ..
+//		invocation listeners 
+	// assertion with multiple pages
+	
 	@Test
 	public void getMyntra(){
 		
